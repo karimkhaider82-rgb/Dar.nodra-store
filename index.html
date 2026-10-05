@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAR NADRA | بكرة ليد زينة ذكية 8 متر - إضاءة فاخرة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>
+tailwind.config={theme:{extend:{fontFamily:{cairo:['Cairo','sans-serif']},colors:{gold:{DEFAULT:'#C9A961',light:'#E8D5A3',dark:'#8B7331'},dark:{DEFAULT:'#0A0A0A',2:'#151515',3:'#1E1E1E',4:'#2C2C2C'}}}}}
+</script>
+<style>
+*{font-family:'Cairo',sans-serif}
+.gold-gradient{background:linear-gradient(135deg,#C9A961 0%,#E8D5A3 50%,#C9A961 100%)}
+.gold-text{background:linear-gradient(135deg,#C9A961,#E8D5A3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.glass{backdrop-filter:blur(20px);background:rgba(15,15,15,0.85)}
+.popup-anim{animation:pop.45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{0%{opacity:0;transform:scale(.88) translateY(24px)}100%{opacity:1;transform:scale(1) translateY(0)}}
+.shimmer{position:relative;overflow:hidden}
+.shimmer::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-100%);animation:shim 2s infinite}
+@keyframes shim{100%{transform:translateX(100%)}}
+</style>
+</head>
+<body class="bg-dark text-white">
+<script>
+const CONFIG = {
+  whatsapp: "212628814810",
+  instagram: "https://instagram.com/dar.nadra",
+  tiktok: "https://tiktok.com/@dar.nadra",
+  rib: {
+    enabled: true,
+    bank: "Attijariwafa Bank - التجاري وفا",
+    number: "007 780 0000000000000000 00",
+    name: "DAR NADRA"
+  }
+};
+const PRODUCTS = [
+  {
+    id: 1,
+    isMain: true,
+    name: "بكرة ليد زينة ذكية (8 متر) قابلة لإعادة الشحن",
+    price: 29.99,
+    oldPrice: 59.99,
+    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&h=800&fit=crop",
+    badge: "الأكثر مبيعاً في الخليج",
+    rating: 4.9,
+    reviews: 342,
+    stock: 9,
+    category: "إضاءة ذكية",
+    description: "إضاءة ليد زينة مرنة بطول 8 أمتار، مقاومة للماء ومثالية لديكور غرف النوم، الصالونات، التخييم، والحدائق. سهلة التخزين وتعمل بشحن USB-C مع أنماط إضاءة متعددة وساحرة.",
+    features: ["🔋 شحن USB-C سريع - يدوم 12 ساعة","💧 مقاوم للماء IP65","✨ 8 أنماط إضاءة","📏 8 متر مرن","🎁 مثالي لرمضان"]
+  },
+  {
+    id: 2,
+    name: "فانوس نحاسي مغربي فاخر - إضاءة دافئة",
+    price: 34.99,
+    oldPrice: 64.99,
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&h=600&fit=crop",
+    badge: "صناعة يدوية",
+    rating: 4.8,
+    reviews: 128,
+    stock: 6,
+    category: "ديكور فاخر",
+    description: "فانوس مغربي أصيل مصنوع يدوياً في فاس."
+  },
+  {
+    id: 3,
+    name: "مبخرة كهربائية ذكية - ذهبية فاخرة",
+    price: 32.99,
+    oldPrice: 55,
+    image: "https://images.unsplash.com/photo-1608111113337-85c82f2c4d85?w=600&h=600&fit=crop",
+    badge: "ترند الخليج",
+    rating: 5.0,
+    reviews: 267,
+    stock: 11,
+    category: "مباخر"
+  },
+  {
+    id: 4,
+    name: "ساعة حائط خشبية أنتيك - ديكور فاخر",
+    price: 39.99,
+    oldPrice: 69.99,
+    image: "https://images.unsplash.com/photo-1507646227500-4d389b0012be?w=600&h=600&fit=crop",
+    badge: "ديكور",
+    rating: 4.7,
+    reviews: 89,
+    stock: 4,
+    category: "ساعات"
+  }
+];
+</script>
+<div class="bg-gold text-dark text-center py-2.5 text-[12px] font-black tracking-wide">
+  <span class="flex items-center justify-center gap-3 flex-wrap px-2">
+    <span>شحن سريع للخليج: السعودية | الإمارات | قطر | الكويت | البحرين | عمان</span>
+    <span class="hidden md:inline w-1 h-1 bg-dark rounded-full"></span>
+    <span class="hidden md:inline">الدفع بالدولار $ • باقي 9 قطع فقط!</span>
+  </span>
+</div>
+<header class="sticky top-0 z-40 bg-dark/90 glass border-b border-dark-4">
+  <div class="max-w-7xl mx-auto px-4 h-[64px] flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center text-dark font-black text-xl">N</div>
+      <div><h1 class="font-black text-[17px] tracking-[0.2em] leading-none">DAR NADRA</h1><p class="text-[9px] text-gold tracking-[0.35em] font-bold">GULF STORE • $</p></div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="hidden md:flex items-center gap-1 bg-green-500/15 border border-green-500/30 text-green-400 px-3 h-8 rounded-full text-[11px] font-bold"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> 18 يشاهد الآن</span>
+      <a id="waHead" href="#" target="_blank" class="bg-[#25D366] text-white w-9 h-9 md:w-auto md:px-4 rounded-full flex items-center justify-center gap-2 text-[13px] font-bold">واتساب</a>
+    </div>
+  </div>
+</header>
+<section class="max-w-7xl mx-auto px-4 py-6 md:py-12 grid lg:grid-cols-2 gap-6 md:gap-10 items-start">
+  <div class="order-1">
+    <div class="aspect-square rounded-[28px] overflow-hidden bg-dark-2 border border-dark-4 relative">
+      <img id="mainImg" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=900" class="w-full h-full object-cover">
+      <div class="absolute top-4 right-4 bg-gold text-dark text-[11px] font-black px-3 py-1.5 rounded-full">خصم 50% - اليوم فقط</div>
+    </div>
+  </div>
+  <div class="order-2">
+    <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold px-3 py-1 rounded-full text-[11px] font-bold">🌙 مثالي لرمضان 2026 • الأكثر مبيعاً في الخليج</div>
+    <h1 class="font-black text-[26px] md:text-[34px] leading-[1.2] mt-4">بكرة ليد زينة ذكية (8 متر)<br><span class="gold-text">قابلة لإعادة الشحن</span></h1>
+    <div class="flex items-end gap-3 mt-5">
+      <p class="font-black text-[36px] leading-none">$29.99</p>
+      <p class="text-[18px] text-white/30 line-through mb-1">$59.99</p>
+      <span class="bg-red-500 text-white text-[11px] font-black px-2.5 py-1 rounded-full mb-2">وفر 50%</span>
+    </div>
+    <p class="text-[14px] leading-7 text-white/70 mt-4">إضاءة ليد زينة مرنة بطول 8 أمتار، مقاومة للماء ومثالية لديكور غرف النوم، الصالونات، التخييم، والحدائق. سهلة التخزين وتعمل بشحن USB-C مع أنماط إضاءة متعددة وساحرة.</p>
+    <div class="mt-6 grid gap-3">
+      <button onclick="openOrder(PRODUCTS[0].id)" class="w-full h-[56px] gold-gradient text-dark rounded-full font-black text-[16px] flex items-center justify-center gap-3 hover:scale-[1.01] transition shimmer">اطلب الآن - $29.99 فقط</button>
+      <div class="grid grid-cols-3 gap-2 text-[11px] text-center">
+        <div class="bg-dark-2 border border-dark-4 rounded-xl py-2.5">شحن سريع للخليج 2-4 أيام</div>
+        <div class="bg-dark-2 border border-dark-4 rounded-xl py-2.5">ضمان 14 يوم استرجاع</div>
+        <div class="bg-dark-2 border border-dark-4 rounded-xl py-2.5">دفع عند الاستلام</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 pb-10">
+  <h3 class="font-black text-[18px] mb-4">قد يعجبك أيضاً - شحن للخليج</h3>
+  <div id="grid" class="grid grid-cols-2 md:grid-cols-4 gap-3"></div>
+</section>
+<section class="max-w-7xl mx-auto px-4 pb-10">
+  <div class="bg-gradient-to-br from-dark-2 to-dark-3 border border-gold/20 rounded-[24px] p-5 flex flex-col md:flex-row gap-5 justify-between">
+    <div class="flex gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-gold/15 border border-gold/30 flex items-center justify-center text-gold text-xl">🏦</div>
+      <div>
+        <h4 class="font-bold text-[14px]">الدفع عبر التحويل البنكي <span class="text-gold">- خصم 10%</span></h4>
+        <div class="mt-2 bg-dark rounded-xl border border-dark-4 p-3 font-mono text-[12px] leading-6">
+          <p>البنك: <span id="bBank" class="text-white font-bold"></span></p>
+          <p>الاسم: <span id="bName" class="text-white"></span></p>
+          <p>RIB: <span id="bRib" class="text-gold font-black"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="border-t border-dark-4 bg-dark-2">
+  <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+    <div>
+      <div class="flex items-center gap-3"><div class="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center text-dark font-black">N</div><div><h4 class="font-black tracking-[0.2em]">DAR NADRA</h4><p class="text-[9px] text-gold tracking-[0.3em]">GULF EDITION • $</p></div></div>
+      <div class="flex gap-3 mt-4">
+        <a id="igF" href="#" target="_blank" class="w-11 h-11 rounded-full bg-dark-3 border border-dark-4 flex items-center justify-center">IG</a>
+        <a id="ttF" href="#" target="_blank" class="w-11 h-11 rounded-full bg-dark-3 border border-dark-4 flex items-center justify-center">TT</a>
+        <a id="waF" href="#" target="_blank" class="w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center">WA</a>
+      </div>
+    </div>
+    <div><h5 class="font-bold text-[13px] mb-3">الشحن الخليجي</h5><ul class="space-y-1.5 text-[12px] text-white/60"><li>السعودية - 2-3 أيام</li><li>الإمارات - 2-4 أيام</li><li>قطر - 3-4 أيام</li><li>الكويت - 3-4 أيام</li></ul></div>
+    <div><h5 class="font-bold text-[13px] mb-3">تواصل</h5><p class="text-[12px] text-white/60 leading-6">واتساب: +212628814810<br>الدفع بالدولار $</p></div>
+  </div>
+</footer>
+<div id="popup" class="fixed inset-0 z-[100] hidden">
+  <div class="absolute inset-0 bg-black/80 backdrop-blur-[8px]" onclick="closeOrder()"></div>
+  <div class="relative min-h-screen flex items-center justify-center p-3">
+    <div class="popup-anim w-full max-w-[520px] bg-[#121212] border border-gold/20 rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,.8)]">
+      <div class="p-5 border-b border-white/5 relative">
+        <button onclick="closeOrder()" class="absolute left-4 top-4 w-9 h-9 rounded-full bg-white/5">X</button>
+        <div class="flex gap-4">
+          <img id="pImg" src="" class="w-[68px] h-[68px] rounded-2xl object-cover border border-gold/20">
+          <div><h3 id="pName" class="font-bold text-[14px] leading-5"></h3><p class="text-gold font-black text-[18px] mt-1">$<span id="pPrice"></span></p></div>
+        </div>
+      </div>
+      <form id="orderForm" onsubmit="submitOrder(event)" class="p-5 space-y-4">
+        <div><label class="text-[12px] font-bold text-white/70 mb-1 block">الاسم الكامل *</label><input required id="fName" type="text" placeholder="مثال: أحمد محمد الغامدي" class="w-full h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-4 text-[14px] focus:border-gold outline-none"></div>
+        <div><label class="text-[12px] font-bold text-white/70 mb-1 block">رقم الهاتف مع رمز الدولة *</label><div class="flex gap-2"><select id="fCode" class="h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-3 text-[13px]"><option value="+966">🇸🇦 +966</option><option value="+971">🇦🇪 +971</option><option value="+974">🇶🇦 +974</option><option value="+965">🇰🇼 +965</option><option value="+973">🇧🇭 +973</option><option value="+968">🇴🇲 +968</option><option value="+212">🇲🇦 +212</option></select><input required id="fPhone" type="tel" placeholder="5X XXX XXXX" class="flex-1 h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-4 text-[14px] text-left" dir="ltr"></div></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="text-[12px] font-bold text-white/70 mb-1 block">الدولة *</label><select required id="fCountry" class="w-full h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-4 text-[13px]"><option value="">اختر الدولة</option><option>السعودية</option><option>الإمارات</option><option>قطر</option><option>الكويت</option><option>البحرين</option><option>عمان</option><option>المغرب</option></select></div>
+          <div><label class="text-[12px] font-bold text-white/70 mb-1 block">المدينة *</label><input required id="fCity" type="text" placeholder="مثال: الرياض" class="w-full h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-4 text-[13px]"></div>
+        </div>
+        <div><label class="text-[12px] font-bold text-white/70 mb-1 block">العنوان السكني *</label><input required id="fAddr" type="text" placeholder="الحي، الشارع" class="w-full h-[46px] bg-dark-3 border border-dark-4 rounded-xl px-4 text-[13px]"></div>
+        <div>
+          <label class="text-[12px] font-bold text-white/70 mb-2 block">طريقة الدفع</label>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="cursor-pointer"><input type="radio" name="pay" value="COD" checked class="peer hidden"><div class="peer-checked:border-gold peer-checked:bg-gold/10 border border-dark-4 bg-dark-3 rounded-xl p-3 text-center">دفع عند الاستلام</div></label>
+            <label class="cursor-pointer"><input type="radio" name="pay" value="BANK" class="peer hidden"><div class="peer-checked:border-gold peer-checked:bg-gold/10 border border-dark-4 bg-dark-3 rounded-xl p-3 text-center">تحويل بنكي -10%</div></label>
+          </div>
+        </div>
+        <button type="submit" class="w-full h-[52px] gold-gradient text-dark rounded-full font-black text-[15px]">تأكيد الطلب - $29.99</button>
+        <p class="text-center text-[10px] text-white/40">🔒 معلوماتك آمنة 100% - شحن سريع للخليج 2-4 أيام</p>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+document.getElementById('waHead').href=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('السلام، بغيت نستفسر على بكرة ليد 8 متر')}`;
+document.getElementById('waF').href=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent('السلام، بغيت نستفسر على بكرة ليد 8 متر')}`;
+document.getElementById('igF').href=CONFIG.instagram;
+document.getElementById('ttF').href=CONFIG.tiktok;
+document.getElementById('bBank').textContent=CONFIG.rib.bank;
+document.getElementById('bName').textContent=CONFIG.rib.name;
+document.getElementById('bRib').textContent=CONFIG.rib.number;
+document.getElementById('grid').innerHTML = PRODUCTS.slice(1).map(p=>`
+<div class="bg-dark-2 border border-dark-4 rounded-[20px] overflow-hidden">
+  <div class="aspect-square overflow-hidden bg-dark-3"><img src="${p.image}" class="w-full h-full object-cover"></div>
+  <div class="p-3"><h4 class="font-bold text-[12px] line-clamp-2 min-h-[32px]">${p.name}</h4><div class="flex items-end justify-between mt-2"><p class="font-black text-gold">$${p.price}</p><button onclick="openOrder(${p.id})" class="bg-white text-dark w-8 h-8 rounded-full">🛒</button></div></div>
+</div>`).join('');
+let active=null;
+function openOrder(id){
+  active=PRODUCTS.find(x=>x.id===id);
+  document.getElementById('pImg').src=active.image;
+  document.getElementById('pName').textContent=active.name;
+  document.getElementById('pPrice').textContent=active.price;
+  document.getElementById('popup').classList.remove('hidden');
+  document.body.style.overflow='hidden';
+}
+function closeOrder(){document.getElementById('popup').classList.add('hidden');document.body.style.overflow='';}
+function submitOrder(e){
+  e.preventDefault();
+  const name=document.getElementById('fName').value.trim();
+  const code=document.getElementById('fCode').value;
+  const phone=document.getElementById('fPhone').value.trim();
+  const country=document.getElementById('fCountry').value;
+  const city=document.getElementById('fCity').value.trim();
+  const addr=document.getElementById('fAddr').value.trim();
+  const pay=document.querySelector('input[name=pay]:checked').value;
+  const payT = pay==='COD'? 'الدفع عند الاستلام (بالدولار $)' : 'تحويل بنكي - خصم 10%';
+  const fullPhone = `${code} ${phone}`;
+  const msg=`🛒 *طلب جديد - DAR NADRA GULF* 💡
+━━━━━━━━━━━━━━━━━━━━
+📦 *المنتج:* ${active.name}
+💰 *السعر:* $${active.price} ${active.oldPrice?`(بدل $${active.oldPrice})`:''}
+━━━━━━━━━━━━━━━━━━━━
+👤 *الاسم:* ${name}
+📞 *الهاتف:* ${fullPhone}
+🌍 *الدولة:* ${country}
+🏙️ *المدينة:* ${city}
+📍 *العنوان:* ${addr}
+💳 *الدفع:* ${payT}
+━━━━━━━━━━━━━━━━━━━━
+⏰ ${new Date().toLocaleString('ar-EG')}
+🌐 من متجر الخليج - $${active.price}`;
+  const url=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  window.open(url,'_blank');
+  document.getElementById('orderForm').innerHTML=`<div class="text-center py-10"><div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto text-2xl">✓</div><h3 class="font-black text-[18px] mt-4">تم إرسال طلبك بنجاح!</h3><p class="text-white/60 text-[13px] mt-2">سيتم تحويلك لواتساب الآن</p><a href="${url}" target="_blank" class="mt-5 inline-flex gold-gradient text-dark px-6 h-11 rounded-full font-black">فتح واتساب الآن</a></div>`;
+}
+</script>
+</body>
+        </html>
