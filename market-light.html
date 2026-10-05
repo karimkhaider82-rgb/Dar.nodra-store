@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>متجر دار نورا - سوق عالمي</title>
+<style>
+body{font-family:system-ui;margin:0;background:#fffaf0;text-align:center}
+header{background:#111;color:#fff;padding:15px}
+.card{background:#fff;margin:12px;padding:15px;border-radius:12px;box-shadow:0 2px 8px #0001;display:inline-block;width:280px}
+.stars{color:#f5a623}.btn{background:#111;color:#fff;padding:10px 18px;border-radius:8px;border:0;cursor:pointer;text-decoration:none;display:inline-block}
+.lang{position:fixed;top:10px;left:10px;background:#fff;padding:6px;border-radius:20px;box-shadow:0 2px 8px #0002;z-index:99}
+</style>
+</head>
+<body>
+<div class="lang"><button onclick="setLang('ar')">AR</button> <button onclick="setLang('fr')">FR</button> <button onclick="setLang('en')">EN</button></div>
+<header><h1 id="t1">متجر دار نورا العالمي</h1><p id="t2">اشترِ و بع منتجاتك للعالم كله</p></header>
+
+<div style="padding:15px">
+<a class="btn" onclick="document.getElementById('sell').style.display='block'">+ بع منتجك الآن</a>
+<a class="btn" href="#reviews">⭐ آراء الزبناء</a>
+</div>
+
+<div id="sell" style="display:none;background:#fff;padding:15px;margin:15px;border-radius:12px">
+<h3>أضف منتجك للبيع</h3>
+<input id="pn" placeholder="اسم المنتج" style="width:90%;padding:8px;margin:5px"><br>
+<input id="pp" placeholder="الثمن بالدرهم" type="number" style="width:90%;padding:8px;margin:5px"><br>
+<input id="pw" placeholder="رقم واتساب ديالك" style="width:90%;padding:8px;margin:5px"><br>
+<button class="btn" onclick="addProduct()">نشر المنتج</button>
+</div>
+
+<div id="products"></div>
+
+<div id="reviews" style="background:#fff;padding:20px;margin-top:20px">
+<h2>⭐ آراء زبائننا</h2>
+<div class="card"><span class="stars">⭐⭐⭐⭐⭐</span><br><b>فاطمة - كازا</b> ✅<br>"الجودة ممتازة والتوصيل سريع"</div>
+<div class="card"><span class="stars">⭐⭐⭐⭐⭐</span><br><b>خديجة - الرباط</b> ✅<br>"أنصحكم به"</div>
+<div class="card"><span class="stars">⭐⭐⭐⭐⭐</span><br><b>أمينة - طنجة</b> ✅<br>"خدمة رائعة"</div>
+</div>
+
+<script>
+const base=[{n:'عباءة نورة السوداء',p:299,w:'212600000000'},{n:'خمار حرير',p:149,w:'212600000000'},{n:'طقم صلاة',p:199,w:'212600000000'}];
+let all=[...base, ...JSON.parse(localStorage.getItem('dar_products')||'[]')];
+function render(){
+let h=''; all.forEach(x=>{
+h+=`<div class="card"><h3>${x.n}</h3><p>${x.p} درهم</p><a class="btn" href="https://wa.me/${x.w}?text=بغيت نشري ${x.n}">شراء عبر واتساب</a></div>`;
+});
+document.getElementById('products').innerHTML=h;
+}
+function addProduct(){
+let n=document.getElementById('pn').value, p=document.getElementById('pp').value, w=document.getElementById('pw').value;
+if(!n||!p||!w){alert('عمر جميع الخانات');return}
+let list=JSON.parse(localStorage.getItem('dar_products')||'[]');
+list.push({n,p,w}); localStorage.setItem('dar_products',JSON.stringify(list));
+all=[...base,...list]; render(); alert('تم نشر منتجك!'); document.getElementById('sell').style.display='none';
+}
+function setLang(l){
+if(l=='ar'){document.getElementById('t1').innerText='متجر دار نورا العالمي';document.getElementById('t2').innerText='اشترِ و بع منتجاتك للعالم كله';document.dir='rtl'}
+if(l=='fr'){document.getElementById('t1').innerText='Marche Global Dar Nora';document.getElementById('t2').innerText='Achetez et vendez dans le monde entier';document.dir='ltr'}
+if(l=='en'){document.getElementById('t1').innerText='Dar Nora Global Market';document.getElementById('t2').innerText='Buy and sell worldwide';document.dir='ltr'}
+}
+render();
+</script>
+</body>
+</html>
