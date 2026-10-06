@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+body{font-family:'Tajawal',sans-serif}
+.glass{backdrop-filter:blur(12px); background:rgba(255,255,255,0.8)}
+.product-card{transition:all.3s ease}
+.product-card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(0,0,0,.08)}
