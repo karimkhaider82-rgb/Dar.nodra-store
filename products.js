@@ -28,3 +28,30 @@ const productsData = [
   }
   // زيد هنا منتجات أخرى... غير دير فاصلة و زيد {name:...}
 ];
+{
+  name: "ساعة Casio كلاسيكية رجالية - LTP-V007",
+  price: "63.15 درهم | $17",
+  img: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600",
+  type: "access",
+  source: "amazon",
+  link: "https://www.amazon.ae/s?k=Casio+LTP-V007+Women&tag=darnodra-21",
+  rating: "4.0 ⭐ (42 تقييم)"
+},
+{
+  name: "ساعة فاخرة زرقاء POEDAGAR - للرجال",
+  price: "102 درهم | Prime",
+  img: "https://images.unsplash.com/photo-1524805444973-bf35d1a0dba5?w=600",
+  type: "access",
+  source: "amazon",
+  link: "https://www.amazon.ae/dp/B0XXXX?tag=darnodra-21",
+  rating: "5.0 ⭐ (19 تقييم) - الأكثر مبيعا"
+},
+{
+  name: "ساعة Casio Vintage الرقمية A158WA - للجنسين",
+  price: "75 درهم | خصم 46%",
+  img: "https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=600",
+  type: "access",
+  source: "amazon",
+  link: "https://www.amazon.ae/dp/B000GAYQKY?tag=darnodra-21",
+  rating: "4.2 ⭐ (34,547 تقييم) - الأكثر طلبا!"
+}
