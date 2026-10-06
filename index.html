@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دار نادرا - متجر عالمي</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FCFCF9] text-[#1a1a1a]">
+<!-- Header -->
+<header class="sticky top-0 z-50 glass border-b">
+<div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between items-center">
+<div class="font-black text-[20px]">دار نادرا<span class="text-[#FF9900]">.</span></div>
+<div class="text-[11px] bg-black text-white px-3 py-1 rounded-full">منتجات أمازون الأصلية</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="max-w-[1280px] mx-auto px-4 py-10 grid md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="inline-flex items-center gap-2 bg-[#FFF3E0] text-[#FF9900] px-3 py-1 rounded-full text-[11px] font-bold mb-4">⭐ تقييم 4.8/5 من 2,100+ عميل</div>
+<h1 class="text-[32px] md:text-[44px] font-black leading-[1.1]">منتجات عالمية<br><span class="text-[#FF9900]">مختارة من أمازون</span></h1>
+<p class="text-[14px] text-gray-500 mt-4 leading-relaxed">نحن لا نبيع، نحن نختار لك أفضل المنتجات المجربة عالميا و نوجهك لأمازون مباشرة. شحن سريع وضمان أمازون.</p>
+<div class="flex gap-6 mt-6 text-[12px]">
+<div>✓ شحن عالمي</div><div>✓ دفع آمن بأمازون</div><div>✓ إرجاع سهل</div>
+</div>
+</div>
+<div class="bg-white rounded-[2rem] p-6 shadow-[0_20px_60px_rgba(0,0,0,.06)] grid grid-cols-2 gap-3">
+<div class="bg-[#FAFAF8] rounded-2xl p-4 text-center"><div class="text-[24px]">🚚</div><div class="text-[11px] mt-2 font-bold">شحن مجاني</div></div>
+<div class="bg-[#FAFAF8] rounded-2xl p-4 text-center"><div class="text-[24px]">🛡️</div><div class="text-[11px] mt-2 font-bold">ضمان أمازون</div></div>
+<div class="bg-[#FAFAF8] rounded-2xl p-4 text-center"><div class="text-[24px]">⭐</div><div class="text-[11px] mt-2 font-bold">منتجات أصلية</div></div>
+<div class="bg-[#FAFAF8] rounded-2xl p-4 text-center"><div class="text-[24px]">💬</div><div class="text-[11px] mt-2 font-bold">دعم 24/7</div></div>
+</div>
+</section>
+
+<!-- Products -->
+<section class="max-w-[1280px] mx-auto px-4 pb-20">
+<div id="products" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+</section>
+
+<!-- Footer Amazon -->
+<footer class="bg-white border-t py-8 text-center">
+<p class="text-[11px] text-gray-400 max-w-[700px] mx-auto px-4 leading-relaxed">بصفتنا شركاء في برنامج أمازون للتسويق بالعمولة، نكسب عمولة من المشتريات المؤهلة. الأسعار و التوفر قد يتغير. جميع المنتجات توجه مباشرة لأمازون.</p>
+<p class="text-[11px] mt-3 font-bold">© 2025 دار نادرا</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script>
+document.getElementById('products').innerHTML = products.map(p=>`
+<div class="product-card bg-white rounded-[1.5rem] p-3 border-gray-100">
+<div class="relative">
+${p.badge?`<span class="absolute top-2 right-2 bg-black text-white text-[9px] px-2 py-1 rounded-full font-bold">${p.badge}</span>`:''}
+<img src="${p.image}" class="w-full h-[160px] md:h-[200px] object-cover rounded-[1rem]">
+</div>
+<div class="mt-3">
+<div class="flex items-center gap-1 text-[11px]"><span class="text-[#FF9900]">★</span> ${p.rating} <span class="text-gray-400">(${p.reviews})</span></div>
+<h3 class="font-bold text-[13px] mt-1 leading-[1.3] line-clamp-2">${p.title}</h3>
+<div class="flex items-center gap-2 mt-2"><span class="font-black text-[15px]">${p.price} $</span><span class="text-[11px] line-through text-gray-400">${p.oldPrice} $</span></div>
+<a href="${p.link}" target="_blank" class="mt-3 bg-[#FF9900] hover:bg-black text-white block text-center py-2.5 rounded-xl text-[12px] font-bold transition">اشتري من أمازون</a>
+</div>
+</div>`).join('');
+</script>
+</body>
+</html>
