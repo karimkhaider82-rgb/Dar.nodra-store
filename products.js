@@ -1,46 +1,30 @@
-const products = [
+// products.js - هنا كتزيد المنتجات ديالك
+// تقدر تزيد أمازون و تقدر تزيد منتجاتك الخاصة
+
+const productsData = [
   {
-    id: "B0XXXX1",
-    title: "سماعات TWS الذكية بخاصية إلغاء الضوضاء",
-    price: "29.99",
-    oldPrice: "59.99",
-    image: "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600",
-    rating: 4.8,
-    reviews: 1242,
-    badge: "الأكثر مبيعا",
-    link: "https://amzn.to/3XXXXX1"
+    name: "عباية سوداء مطرزة فاخرة - Amazon",
+    price: "1,250 MAD / $49",
+    img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600",
+    type: "abaya",
+    source: "amazon",
+    link: "https://www.amazon.com/s?k=black+abaya+gold+embroidery&tag=darnodra-21"
   },
   {
-    id: "B0XXXX2",
-    title: "ساعة ذكية مقاومة للماء - تتبع صحي دقيق",
-    price: "34.99",
-    oldPrice: "69.99",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600",
-    rating: 4.6,
-    reviews: 890,
-    badge: "عرض اليوم",
-    link: "https://amzn.to/3XXXXX2"
+    name: "قفطان مغربي أصيل",
+    price: "980 MAD",
+    img: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600",
+    type: "kaftan",
+    source: "own",
+    link: ""
   },
   {
-    id: "B0XXXX3",
-    title: "مبخرة كهربائية فاخرة للمنزل والسيارة",
-    price: "42.99",
-    oldPrice: "75.00",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=600",
-    rating: 4.9,
-    reviews: 2103,
-    badge: "جديد",
-    link: "https://amzn.to/3XXXXX3"
-  },
-  {
-    id: "B0XXXX4",
-    title: "حامل لابتوب خشبي قابل للطي - مريح للظهر",
-    price: "19.99",
-    oldPrice: "35.00",
-    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600",
-    rating: 4.7,
-    reviews: 543,
-    badge: "",
-    link: "https://amzn.to/3XXXXX4"
+    name: "شنطة يد فاخرة - كنز أمازون",
+    price: "$35",
+    img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600",
+    type: "access",
+    source: "amazon",
+    link: "https://www.amazon.com/s?k=luxury+handbag+women&tag=darnodra-21"
   }
+  // زيد هنا منتجات أخرى... غير دير فاصلة و زيد {name:...}
 ];
