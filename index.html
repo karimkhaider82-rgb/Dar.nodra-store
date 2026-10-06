@@ -4,77 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>دار نضرة - متاهة الكنوز</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cinzel:wght@400;600&family=Inter:wght@400&display=swap" rel="stylesheet">
-<style>
-:root{--black:#0a0a0a;--gold:#d4af37;--light:#fdf8f0}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fdf8f0;font-family:'Inter',sans-serif}
-.top{background:linear-gradient(90deg,#d4af37,#f5e6a8,#d4af37);color:#000;text-align:center;padding:8px;font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;font-weight:700}
-.logo{text-align:center;padding:24px 0;border-bottom:1px solid #1a1a1a}
-.logo h1{font-family:'Amiri',serif;font-size:48px;color:#d4af37}
-.logo h2{font-family:'Cinzel',serif;letter-spacing:8px;font-size:12px;color:#f5e6a8}
-.maze-nav{display:flex;justify-content:center;gap:12px;padding:20px;flex-wrap:wrap}
-.door{background:#141414;border:1.5px solid #d4af37;color:#d4af37;padding:14px 26px;font-family:'Cinzel',serif;font-size:12px;cursor:pointer;min-width:160px}
-.door.active,.door:hover{background:#d4af37;color:#000}
-.controls{display:flex;justify-content:center;gap:10px;padding:0 20px 20px;flex-wrap:wrap}
-.btn-add{background:#d4af37;color:#000;border:none;padding:10px 20px;font-family:'Cinzel',serif;font-size:11px;font-weight:700;cursor:pointer}
-.btn-admin{background:transparent;border:1px solid #333;color:#888;padding:10px 20px;font-family:'Cinzel',serif;font-size:11px;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding:25px;max-width:1300px;margin:0 auto}
-.card{background:#111;border:1px solid #1f1f1f;position:relative}
-.card img{width:100%;height:280px;object-fit:cover}
-.card-body{padding:16px}
-.badge{position:absolute;top:10px;right:10px;font-size:10px;padding:4px 8px;font-family:'Cinzel',serif}
-.badge-amz{background:#ff9900;color:#000}.badge-own{background:#d4af37;color:#000}
-.price{color:#d4af37;font-weight:700;margin:8px 0}
-.btn-buy{width:100%;padding:9px;font-size:11px;font-family:'Cinzel',serif;border:1px solid #d4af37;cursor:pointer}
-.buy-amz{background:#d4af37;color:#000}.buy-own{background:transparent;color:#d4af37}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:20px}
-.modal.active{display:flex}.modal-box{background:#141414;border:1px solid #d4af37;padding:28px;max-width:460px;width:100%}
-.modal-box input,.modal-box select{width:100%;background:#0a0a0a;border:1px solid #333;padding:10px;color:#fff;margin-bottom:12px}
-.save{width:100%;background:#d4af37;color:#000;border:none;padding:12px;font-family:'Cinzel',serif;font-weight:700;cursor:pointer}
-.whatsapp{position:fixed;bottom:20px;left:20px;background:#25D366;color:#fff;width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="top">متاهة دار نضرة - كل باب يخفي كنوز</div>
-<div class="logo"><h1>دار نضرة</h1><h2>DAR NODRA MAZE</h2></div>
-<div class="maze-nav">
-<button class="door active" onclick="filterMaze('all')">🌟 كل الكنوز</button>
-<button class="door" onclick="filterMaze('abaya')">🚪 باب العبايات</button>
-<button class="door" onclick="filterMaze('kaftan')">🚪 باب القفاطين</button>
-<button class="door" onclick="filterMaze('access')">🚪 باب الإكسسوارات</button>
-<button class="door" onclick="filterMaze('amazon')">🛒 كنوز أمازون</button>
+<!-- TOP BAR -->
+<div class="top-bar">DAR NODRA MAZE • متاهة الكنوز • واتساب: 0628814810</div>
+
+<!-- LOGO -->
+<div class="logo-area">
+<h1>دار نضرة</h1>
+<h2>DAR NODRA MAZE</h2>
 </div>
-<div class="controls">
-<button class="btn-add" onclick="openAdd()">+ زيد منتج جديد</button>
-<button class="btn-admin" onclick="exportProducts()">📥 تصدير المنتجات</button>
-<input type="file" id="importFile" style="display:none" accept=".json" onchange="importProducts(event)">
-<button class="btn-admin" onclick="document.getElementById('importFile').click()">📤 استيراد</button>
+
+<!-- MAZE DOORS -->
+<div class="maze-doors">
+<button class="door active" data-filter="all">🌟 كل الكنوز</button>
+<button class="door" data-filter="abaya">🚪 باب العبايات</button>
+<button class="door" data-filter="kaftan">🚪 باب القفاطين</button>
+<button class="door" data-filter="access">🚪 إكسسوارات</button>
+<button class="door" data-filter="amazon">🛒 كنوز أمازون</button>
 </div>
-<div class="grid" id="grid"></div>
-<a class="whatsapp" href="https://wa.me/212628814810" target="_blank">💬</a>
-<div class="modal" id="modal"><div class="modal-box">
-<h3 style="color:#d4af37;font-family:'Cinzel',serif;margin-bottom:18px">زيد كنز جديد</h3>
-<input id="pName" placeholder="اسم المنتج"><input id="pPrice" placeholder="الثمن">
-<input id="pImg" placeholder="رابط الصورة https://...">
-<select id="pType"><option value="abaya">عباية</option><option value="kaftan">قفطان</option><option value="access">إكسسوار</option></select>
-<select id="pSource"><option value="amazon">أمازون Affiliate</option><option value="own">منتج خاص - واتساب</option></select>
-<input id="pLink" placeholder="رابط أمازون بالأفلييت">
-<button class="save" onclick="saveProduct()">حفظ ✅</button>
-<button class="save" style="background:transparent;color:#888;border:1px solid #333;margin-top:8px" onclick="closeAdd()">إلغاء</button>
-</div></div>
+
+<!-- CONTROLS -->
+<div class="admin-bar">
+<button id="btnAdd">+ زيد منتج جديد (أمازون أو خاص)</button>
+<span style="font-size:11px;color:#666">تقدر تزيد منتجات من أمازون + منتجاتك الخاصة فالواتساب</span>
+</div>
+
+<!-- PRODUCTS GRID - كيقرا من products.js -->
+<div id="productsGrid" class="products-grid"></div>
+
+<!-- WHATSAPP -->
+<a class="whatsapp-float" href="https://wa.me/212628814810" target="_blank">💬</a>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
 <script>
-let products=JSON.parse(localStorage.getItem('darnodra_maze')||'null')||[
-{name:"عباية سوداء مطرزة - Amazon",price:"$49",img:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600",type:"abaya",source:"amazon",link:"https://www.amazon.com/s?k=abaya&tag=tag-21"},
-{name:"قفطان مغربي",price:"980 MAD",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600",type:"kaftan",source:"own",link:""}
-];
-let current='all';function saveLS(){localStorage.setItem('darnodra_maze',JSON.stringify(products))}
-function render(){let g=document.getElementById('grid');g.innerHTML='';let list=current==='all'?products:current==='amazon'?products.filter(p=>p.source==='amazon'):products.filter(p=>p.type===current);list.forEach((p,i)=>{let idx=products.indexOf(p);let d=document.createElement('div');d.className='card';d.innerHTML=`<span class="badge ${p.source==='amazon'?'badge-amz':'badge-own'}">${p.source==='amazon'?'AMAZON':'خاص'}</span><img src="${p.img}"><div class="card-body"><h4 style="font-family:'Cinzel',serif;font-size:13px;min-height:36px">${p.name}</h4><div class="price">${p.price}</div>${p.source==='amazon'?`<button class="btn-buy buy-amz" onclick="window.open('${p.link}','_blank')">شاهد على أمازون ↗</button>`:`<button class="btn-buy buy-own" onclick="window.open('https://wa.me/212628814810?text='+encodeURIComponent('بغيت: '+p.name),'_blank')">اطلبي واتساب 💬</button>`}</div></div>`;g.appendChild(d)})}
-function filterMaze(f){current=f;document.querySelectorAll('.door').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');render()}
-function openAdd(){document.getElementById('modal').classList.add('active')}function closeAdd(){document.getElementById('modal').classList.remove('active')}
-function saveProduct(){let n=document.getElementById('pName').value;if(!n)return alert('دخل الاسم');products.unshift({name:n,price:document.getElementById('pPrice').value,img:document.getElementById('pImg').value||'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600',type:document.getElementById('pType').value,source:document.getElementById('pSource').value,link:document.getElementById('pLink').value});saveLS();render();closeAdd()}
-function exportProducts(){let b=new Blob([JSON.stringify(products,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='products.json';a.click()}
-function importProducts(e){let f=e.target.files[0];let r=new FileReader();r.onload=ev=>{products=JSON.parse(ev.target.result);saveLS();render()};r.readAsText(f)}
+// كيقرا المنتجات من products.js + اللي زدتي نتا
+let all = [];
+if(typeof productsData !== 'undefined') all = productsData;
+if(typeof products !== 'undefined') all = [...all, ...products];
+let saved = JSON.parse(localStorage.getItem('maze_extra')||'[]');
+all = [...saved, ...all];
+
+let current='all';
+function render(){
+let grid=document.getElementById('productsGrid'); grid.innerHTML='';
+let list=current==='all'?all:all.filter(p=> (p.source||'')==='amazon' ? current==='amazon' : (p.type===current||p.category===current) || current==='amazon' && p.link?.includes('amazon'));
+if(current==='amazon') list=all.filter(p=>p.source==='amazon'||p.link?.includes('amazon')||p.link?.includes('amzn'));
+list.forEach(p=>{
+let div=document.createElement('div'); div.className='product-card';
+let img=p.img||p.image||'https://via.placeholder.com/300';
+let name=p.name||p.title;
+let price=p.price;
+let link=p.link||p.url||'';
+let isAmz=(p.source==='amazon'||link.includes('amazon')||link.includes('amzn'));
+div.innerHTML=`<img src="${img}"><div class="p-info"><h4>${name}</h4><div class="p-price">${price}</div>${isAmz?`<a href="${link}" target="_blank" class="btn-amz">شاهد على أمازون ↗</a>`:`<a href="https://wa.me/212628814810?text=${encodeURIComponent('بغيت: '+name)}" target="_blank" class="btn-wa">اطلبي واتساب 💬</a>`}</div>`;
+grid.appendChild(div);
+})
+}
+document.querySelectorAll('.door').forEach(b=>b.onclick=function(){document.querySelectorAll('.door').forEach(x=>x.classList.remove('active'));this.classList.add('active');current=this.dataset.filter;render()});
+document.getElementById('btnAdd').onclick=function(){
+let name=prompt('اسم المنتج:'); if(!name)return;
+let price=prompt('الثمن:'); let img=prompt('رابط الصورة (خليه خاوي إلا بغيتي):')||'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600';
+let type=prompt('النوع: abaya / kaftan / access','abaya');
+let source=prompt('المصدر: amazon ولا own (خاص)','amazon');
+let link=prompt(source==='amazon'?'رابط أمازون بالأفلييت:':'رابط المنتج (اختياري):')||'';
+let p={name,price,img,type,source,link}; let arr=JSON.parse(localStorage.getItem('maze_extra')||'[]');arr.unshift(p);localStorage.setItem('maze_extra',JSON.stringify(arr));all.unshift(p);render();alert('تزاد ✅');
+}
 render();
 </script>
 </body>
