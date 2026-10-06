@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دار نادرا</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FCFCF9]">
+<header class="sticky top-0 bg-white/80 backdrop-blur border-b">
+<div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between">
+<div class="font-black text-[20px]">دار نادرا<span class="text-[#FF9900]">.</span></div>
+<div class="text-[10px] bg-black text-white px-3 py-1 rounded-full">Amazon Partner</div>
+</div>
+</header>
+
+<section class="max-w-[1280px] mx-auto px-4 py-10">
+<h1 class="text-[30px] font-black leading-[1.1]">منتجات عالمية<br><span class="text-[#FF9900]">مختارة من أمازون</span></h1>
+<p class="text-[13px] text-gray-500 mt-3">نوجهك مباشرة لأمازون - دفع آمن وضمان أصلي</p>
+<div id="products" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"></div>
+</section>
+
+<footer class="bg-white border-t py-6 text-center text-[11px] text-gray-400">
+بصفتنا شركاء أمازون نكسب عمولة من المشتريات المؤهلة<br>© دار نادرا 2025
+</footer>
+
+<script src="config.js"></script>
+<script src="products.js"></script>
+<script>
+var container = document.getElementById('products');
+var html = '';
+for(var i=0;i<products.length;i++){
+var p=products[i];
+html+='<div class="bg-white rounded-[1.5rem] p-3 border"><img src="'+p.image+'" class="w-full h-[180px] object-cover rounded-xl"><div class="mt-3"><div class="text-[11px]">★ '+p.rating+' ('+p.reviews+')</div><h3 class="font-bold text-[13px] mt-1">'+p.title+'</h3><div class="font-black mt-2">'+p.price+' $</div><a href="'+p.link+'" target="_blank" class="bg-[#FF9900] text-white block text-center py-2 rounded-xl mt-2 text-[12px] font-bold">اشتري من أمازون</a></div></div>';
+}
+container.innerHTML=html;
+</script>
+</body>
+</html>
