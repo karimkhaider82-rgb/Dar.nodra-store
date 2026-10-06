@@ -1,40 +1,80 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>دار نادرا</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دار نضرة - DAR NODRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--gold:#d4af37;--gold-light:#f5e6a8;--cream:#fdf8f0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--black);color:var(--cream);font-family:'Inter',sans-serif}
+.top-bar{background:var(--gold);color:#000;text-align:center;padding:8px;font-size:11px;letter-spacing:1.5px;font-family:'Cinzel',serif;font-weight:600}
+.top-logo{text-align:center;padding:28px 0 12px}
+.top-logo h1{font-family:'Amiri',serif;font-size:54px;color:var(--gold)}
+.top-logo h2{font-family:'Cinzel',serif;letter-spacing:9px;font-size:13px;color:var(--gold-light);margin-top:6px;font-weight:400}
+.nav{display:flex;justify-content:center;gap:32px;padding:16px 0;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;font-family:'Cinzel',serif;font-size:12.5px;position:sticky;top:0;background:#0a0a0a;z-index:50}
+.nav a{color:var(--cream);text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 1.25fr;min-height:560px}
+.hero-left{padding:70px 55px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);border-top:1px solid var(--gold);padding-top:12px;width:fit-content;margin-bottom:22px}
+.hero-left h3{font-family:'Cinzel',serif;font-size:40px;color:var(--gold-light);font-weight:400;margin-bottom:16px}
+.hero-left p.desc{color:#999;font-size:14px;line-height:1.8;margin-bottom:30px;max-width:440px}
+.btn-gold{background:var(--gold);color:#000;padding:13px 30px;border:none;font-family:'Cinzel',serif;font-size:11px;font-weight:700;cursor:pointer}
+.btn-outline{border:1px solid var(--gold);color:var(--gold);background:transparent;padding:12px 30px;font-family:'Cinzel',serif;font-size:11px;cursor:pointer;margin-left:10px}
+.hero-right img{width:100%;height:100%;object-fit:cover}
+.features{display:grid;grid-template-columns:repeat(3,1fr);background:#080808;border-top:1px solid #c9a227;border-bottom:1px solid #c9a227;padding:16px 30px}
+.feat{text-align:center}.feat b{display:block;font-family:'Cinzel',serif;font-size:10.5px;color:var(--gold)}.feat span{font-size:11px;color:#888}
+.collection{background:var(--cream);color:#111;padding:60px 45px;text-align:center}
+.collection h4{font-family:'Cinzel',serif;font-size:19px;letter-spacing:5px;margin-bottom:40px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;max-width:1200px;margin:0 auto}
+.prod img{width:100%;height:300px;object-fit:cover}
+.prod h5{font-family:'Cinzel',serif;font-size:13px;margin:18px 0 6px}
+.price{color:#b8922e;font-family:'Cinzel',serif;font-size:12.5px;font-weight:600;margin-bottom:14px}
+.add{border:1px solid #b8922e;background:transparent;padding:7px 18px;font-size:10px;font-family:'Cinzel',serif;cursor:pointer}
+.signature{background:#0a0a0a;padding:60px 20px;text-align:center}
+.signature h4{font-family:'Cinzel',serif;letter-spacing:4px;color:var(--gold)}
+.signature p{color:#777;font-size:13px;margin:14px auto 22px;max-width:600px}
+footer{background:#070707;border-top:1px solid #1a1a1a;padding:40px 45px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.6fr;gap:35px}
+footer h6{font-family:'Cinzel',serif;font-size:11px;color:var(--gold);margin-bottom:14px}
+footer a,footer p{font-size:12.5px;color:#777;line-height:2;display:block;text-decoration:none}
+.whatsapp{position:fixed;bottom:22px;left:22px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;z-index:999}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.products{grid-template-columns:1fr}.features{grid-template-columns:1fr;gap:14px}.nav{flex-wrap:wrap}}
+</style>
 </head>
-<body class="bg-[#FCFCF9]">
-<header class="sticky top-0 bg-white/80 backdrop-blur border-b">
-<div class="max-w-[1280px] mx-auto px-4 py-4 flex justify-between">
-<div class="font-black text-[20px]">دار نادرا<span class="text-[#FF9900]">.</span></div>
-<div class="text-[10px] bg-black text-white px-3 py-1 rounded-full">Amazon Partner</div>
+<body>
+<div class="top-bar">توصيل مجاني للطلبات فوق 1000 درهم • LIVRAISON GRATUITE > 1000 MAD</div>
+<div class="top-logo"><h1>دار نضرة</h1><h2>DAR NODRA</h2></div>
+<div class="nav"><a>HOME</a><a>ABAYA</a><a>KAFTAN</a><a>COLLECTIONS</a><a>NEW IN</a><a>ABOUT</a><a>CONTACT</a></div>
+<section class="hero">
+<div class="hero-left">
+<div class="eyebrow">ELEVATED • TIMELESS • MOROCCAN</div>
+<h3>Crafted for the Modern Woman</h3>
+<p class="desc">اكتشفي مجموعتنا المصنوعة يدويا من العبايات والقفاطين، منسوجة بالتراث، مطرزة بالذهب.</p>
+<div><button class="btn-gold" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">تسوقي العبايات</button><button class="btn-outline">تسوقي القفاطين</button></div>
+<div style="margin-top:22px;font-size:11px;color:#f5e6a8;font-family:'Cinzel',serif">صنع يدوي في المغرب • واتساب: 0628814810</div>
 </div>
-</header>
-
-<section class="max-w-[1280px] mx-auto px-4 py-10">
-<h1 class="text-[30px] font-black leading-[1.1]">منتجات عالمية<br><span class="text-[#FF9900]">مختارة من أمازون</span></h1>
-<p class="text-[13px] text-gray-500 mt-3">نوجهك مباشرة لأمازون - دفع آمن وضمان أصلي</p>
-<div id="products" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8"></div>
+<div class="hero-right"><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=1000&q=80"></div>
 </section>
-
-<footer class="bg-white border-t py-6 text-center text-[11px] text-gray-400">
-بصفتنا شركاء أمازون نكسب عمولة من المشتريات المؤهلة<br>© دار نادرا 2025
-</footer>
-
-<script src="config.js"></script>
-<script src="products.js"></script>
+<div class="features">
+<div class="feat"><div><b>HANDCRAFTED IN MOROCCO</b><span>صناعة مغربية أصيلة</span></div></div>
+<div class="feat"><div><b>LUXE FABRICS</b><span>حرير وقطن فاخر</span></div></div>
+<div class="feat"><div><b>توصيل مجاني 🚚</b><span>في جميع أنحاء المغرب</span></div></div>
+</div>
+<section id="shop" class="collection">
+<h4>FEATURED COLLECTION</h4>
+<div class="products">
+<div class="prod"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=700"><h5>عباية سوداء مطرزة بالذهب</h5><div class="price">1,250 MAD</div><button class="add" onclick="order('عباية سوداء مطرزة - 1250 درهم')">اطلبي عبر واتساب</button></div>
+<div class="prod"><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=700"><h5>قفطان كلاسيكي مطرز</h5><div class="price">980 MAD</div><button class="add" onclick="order('قفطان كلاسيكي - 980 درهم')">اطلبي عبر واتساب</button></div>
+<div class="prod"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=700"><h5>عباية كحلية بلمسة ذهبية</h5><div class="price">1,150 MAD</div><button class="add" onclick="order('عباية كحلية - 1150 درهم')">اطلبي عبر واتساب</button></div>
+</div>
+</section>
+<section class="signature"><h4>THE DAR NODRA SIGNATURE</h4><p>قصات خالدة. تطريز متقن. فخامة مغربية أصيلة.</p><button class="btn-outline" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">استكشفي الكل</button></section>
+<footer><div><h6>دار نضرة</h6><p>Luxury Boutique</p><p>📍 Casablanca</p><p>📞 0628814810</p></div><div><h6>SHOP</h6><a>Abayas</a><a>Kaftans</a><a>New</a></div><div><h6>SUPPORT</h6><a>Shipping</a><a>Contact</a></div><div><h6>JOIN US</h6><p>عروض حصرية</p></div></footer>
+<div style="text-align:center;padding:12px;background:#050505;color:#444;font-size:10px">© 2026 DAR NODRA - 0628814810</div>
+<a class="whatsapp" href="https://wa.me/212628814810?text=Salam%20Dar%20Nodra%20bghit%20ncommandi" target="_blank">💬</a>
 <script>
-var container = document.getElementById('products');
-var html = '';
-for(var i=0;i<products.length;i++){
-var p=products[i];
-html+='<div class="bg-white rounded-[1.5rem] p-3 border"><img src="'+p.image+'" class="w-full h-[180px] object-cover rounded-xl"><div class="mt-3"><div class="text-[11px]">★ '+p.rating+' ('+p.reviews+')</div><h3 class="font-bold text-[13px] mt-1">'+p.title+'</h3><div class="font-black mt-2">'+p.price+' $</div><a href="'+p.link+'" target="_blank" class="bg-[#FF9900] text-white block text-center py-2 rounded-xl mt-2 text-[12px] font-bold">اشتري من أمازون</a></div></div>';
-}
-container.innerHTML=html;
+function order(name){let m=encodeURIComponent("السلام عليكم دار نضرة 🌸\nبغيت نطلب: "+name+"\n\nالاسم:\nالمدينة:\nالمقاس:");window.open("https://wa.me/212628814810?text="+m,"_blank")}
 </script>
 </body>
 </html>
