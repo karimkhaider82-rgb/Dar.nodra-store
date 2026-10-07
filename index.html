@@ -1,84 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دار نضرة - متاهة الكنوز</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دار نضرة | DAR NODRA MAZE</title>
+<style>
+body{margin:0;background:#0a0a0a;color:#fff;font-family:Cairo,sans-serif}
+.header{background:#111;padding:15px;text-align:center;border-bottom:2px solid #D4AF37}
+.header h1{color:#D4AF37;margin:0;font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:15px}
+.card{background:#1a1a1a;border:1px solid #333;border-radius:12px;overflow:hidden;text-align:center;padding:10px}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card h3{font-size:14px;margin:8px 0;color:#fff;height:36px;overflow:hidden}
+.card .price{color:#D4AF37;font-weight:bold;font-size:13px}
+.btn{display:block;background:linear-gradient(45deg,#D4AF37,#b8962f);color:#000;padding:8px;margin-top:8px;border-radius:6px;text-decoration:none;font-weight:bold;font-size:13px}
+#lock{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#D4AF37;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999999}
+</style>
 </head>
 <body>
-<!-- TOP BAR -->
-<div id="lock" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#D4AF37;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999999;text-align:center;font-family:Cairo;">
-  <h1 style="font-size:40px;">دار نضرة</h1>
-  <p>المتجر مغلق للصيانة - يفتح قريبا</p>
-  <input id="pass" type="password" placeholder="كود الدخول" style="margin-top:20px;padding:12px;border-radius:8px;border:1px solid gold;text-align:center;">
-  <button onclick="if(document.getElementById('pass').value==='nodra123'){document.getElementById('lock').style.display='none'}" style="margin-top:10px;padding:10px 20px;background:gold;color:black;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">دخول</button>
-  <small style="margin-top:15px;opacity:0.5;">الكود
-</div> <div class="top-bar">DAR NODRA MAZE • متاهة الكنوز • واتساب: 0628814810</div>
-
-<!-- LOGO -->
-<div class="logo-area">
+<div id="lock">
 <h1>دار نضرة</h1>
-<h2>DAR NODRA MAZE</h2>
+<p>المتجر مغلق للصيانة</p>
+<input id="pass" type="password" placeholder="كود الدخول" style="padding:12px;border-radius:8px;border:1px solid gold;text-align:center;margin-top:20px">
+<button onclick="if(document.getElementById('pass').value==='nodra123'){document.getElementById('lock').style.display='none'}" style="margin-top:10px;padding:10px 20px;background:gold;color:#000;border:none;border-radius:8px;font-weight:bold">دخول</button>
 </div>
 
-<!-- MAZE DOORS -->
-<div class="maze-doors">
-<button class="door active" data-filter="all">🌟 كل الكنوز</button>
-<button class="door" data-filter="abaya">🚪 باب العبايات</button>
-<button class="door" data-filter="kaftan">🚪 باب القفاطين</button>
-<button class="door" data-filter="access">🚪 إكسسوارات</button>
-<button class="door" data-filter="amazon">🛒 كنوز أمازون</button>
-</div>
+<div class="header"><h1>دار نضرة - DAR NODRA MAZE</h1><small>0623894810 - منتجات فاخرة</small></div>
+<div id="products" class="grid"></div>
 
-<!-- CONTROLS -->
-<div class="admin-bar">
-<button id="btnAdd">+ زيد منتج جديد (أمازون أو خاص)</button>
-<span style="font-size:11px;color:#666">تقدر تزيد منتجات من أمازون + منتجاتك الخاصة فالواتساب</span>
-</div>
-
-<!-- PRODUCTS GRID - كيقرا من products.js -->
-<div id="productsGrid" class="products-grid"></div>
-
-<!-- WHATSAPP -->
-<a class="whatsapp-float" href="https://wa.me/212628814810" target="_blank">💬</a>
-
-<script src="config.js"></script>
-<script src="products.js"></script>
 <script>
-// كيقرا المنتجات من products.js + اللي زدتي نتا
-let all = [];
-if(typeof productsData !== 'undefined') all = productsData;
-if(typeof products !== 'undefined') all = [...all, ...products];
-let saved = JSON.parse(localStorage.getItem('maze_extra')||'[]');
-all = [...saved, ...all];
-
-let current='all';
-function render(){
-let grid=document.getElementById('productsGrid'); grid.innerHTML='';
-let list=current==='all'?all:all.filter(p=> (p.source||'')==='amazon' ? current==='amazon' : (p.type===current||p.category===current) || current==='amazon' && p.link?.includes('amazon'));
-if(current==='amazon') list=all.filter(p=>p.source==='amazon'||p.link?.includes('amazon')||p.link?.includes('amzn'));
-list.forEach(p=>{
-let div=document.createElement('div'); div.className='product-card';
-let img=p.img||p.image||'https://via.placeholder.com/300';
-let name=p.name||p.title;
-let price=p.price;
-let link=p.link||p.url||'';
-let isAmz=(p.source==='amazon'||link.includes('amazon')||link.includes('amzn'));
-div.innerHTML=`<img src="${img}"><div class="p-info"><h4>${name}</h4><div class="p-price">${price}</div>${isAmz?`<a href="${link}" target="_blank" class="btn-amz">شاهد على أمازون ↗</a>`:`<a href="https://wa.me/212628814810?text=${encodeURIComponent('بغيت: '+name)}" target="_blank" class="btn-wa">اطلبي واتساب 💬</a>`}</div>`;
-grid.appendChild(div);
-})
-}
-document.querySelectorAll('.door').forEach(b=>b.onclick=function(){document.querySelectorAll('.door').forEach(x=>x.classList.remove('active'));this.classList.add('active');current=this.dataset.filter;render()});
-document.getElementById('btnAdd').onclick=function(){
-let name=prompt('اسم المنتج:'); if(!name)return;
-let price=prompt('الثمن:'); let img=prompt('رابط الصورة (خليه خاوي إلا بغيتي):')||'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600';
-let type=prompt('النوع: abaya / kaftan / access','abaya');
-let source=prompt('المصدر: amazon ولا own (خاص)','amazon');
-let link=prompt(source==='amazon'?'رابط أمازون بالأفلييت:':'رابط المنتج (اختياري):')||'';
-let p={name,price,img,type,source,link}; let arr=JSON.parse(localStorage.getItem('maze_extra')||'[]');arr.unshift(p);localStorage.setItem('maze_extra',JSON.stringify(arr));all.unshift(p);render();alert('تزاد ✅');
-}
-render();
+const products=[
+{name:"ساعة Casio Vintage A158WA - #1 الأكثر مبيعا",price:"75 درهم ⭐4.3",img:"https://m.media-amazon.com/images/I/51v6yOfG4OL._SL500_.jpg",link:"https://www.amazon.ae/dp/B000GAYQJ0/?tag=darnodra-21"},
+{name:"عطر العربية للعود - فخم 90مل",price:"310 درهم ⭐5.0",img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400",link:"https://www.amazon.ae/s?k=oud+perfume&tag=darnodra-21"},
+{name:"ساعة LBOYLOVE نسائية - أزرق و ذهبي",price:"105 درهم",img:"https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=400",link:"https://www.amazon.ae/s?k=women+watch&tag=darnodra-21"},
+{name:"معطر Areon فانيليا - 50 مل",price:"29 درهم ⭐4.1",img:"https://images.unsplash.com/photo-1543422654-ac1c6ca993ed?w=400",link:"https://www.amazon.ae/s?k=areon&tag=darnodra-21"}
+];
+document.getElementById('products').innerHTML=products.map(p=>`
+<div class="card">
+<img src="${p.img}">
+<h3>${p.name}</h3>
+<div class="price">${p.price}</div>
+<a class="btn" href="${p.link}" target="_blank">شاهد على أمازون</a>
+</div>`).join('');
 </script>
 </body>
 </html>
