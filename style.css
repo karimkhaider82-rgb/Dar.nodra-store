@@ -11,3 +11,16 @@
 #cart-items::-webkit-scrollbar { width: 4px; }
 #cart-items::-webkit-scrollbar-track { background: #f1f1f1; }
 #cart-items::-webkit-scrollbar-thumb { background: #b45309; border-radius: 4px; }
+/* أكواد دار نضرة المهيبة */
+.gold-btn {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #000; padding: 12px 30px; border-radius: 50px;
+  font-weight: bold; text-decoration: none; display: inline-block;
+  box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+.top-banner {
+  background: linear-gradient(90deg, #000, #FFD700, #000);
+  background-size: 200% 100%; color: #000; text-align: center;
+  padding: 10px; font-weight: bold; animation: shine 3s infinite linear;
+}
+@keyframes shine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
