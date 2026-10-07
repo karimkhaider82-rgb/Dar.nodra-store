@@ -1,57 +1,67 @@
-// products.js - هنا كتزيد المنتجات ديالك
-// تقدر تزيد أمازون و تقدر تزيد منتجاتك الخاصة
-
 const productsData = [
   {
-    name: "عباية سوداء مطرزة فاخرة - Amazon",
-    price: "1,250 MAD / $49",
-    img: "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600",
-    type: "abaya",
+    name: "العربية للعود - عطر مداوي 90 مل - فخم",
+    price: "310 درهم | 5 ⭐ - الأكثر مبيعا",
+    img: "https://m.media-amazon.com/images/I/71...oud.jpg",
+    type: "parfum",
     source: "amazon",
-    link: "https://www.amazon.com/s?k=black+abaya+gold+embroidery&tag=darnodra-21"
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXMADAWI/?tag=darnodra-21",
+    specs: "عطر عربي فاخر - للجنسين - ثبات طويل - يناسب دار نضرة"
   },
   {
-    name: "قفطان مغربي أصيل",
-    price: "980 MAD",
-    img: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600",
-    type: "kaftan",
-    source: "own",
-    link: ""
+    name: "العربية للعود - عطر خيال 75 مل - خشبي فاخر",
+    price: "109 درهم | خصم 6% | 4.5 ⭐ (82)",
+    img: "https://m.media-amazon.com/images/I/61Khyal.jpg",
+    type: "parfum",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXKHAYAL/?tag=darnodra-21"
   },
   {
-    name: "شنطة يد فاخرة - كنز أمازون",
-    price: "$35",
-    img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600",
+    name: "ساعة LBOYLOVE نسائية فاخرة - أزرق و ذهبي وردي مع كريستال",
+    price: "105.90 درهم | 3.4 ⭐",
+    img: "https://m.media-amazon.com/images/I/71LBOYLOVE.jpg",
     type: "access",
     source: "amazon",
-    link: "https://www.amazon.com/s?k=luxury+handbag+women&tag=darnodra-21"
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXLBOY/?tag=darnodra-21"
+  },
+  {
+    name: "Areon معطر جو فاخر 50 مل - رائحة الفانيليا",
+    price: "29.99 درهم | 4.4 ⭐ (448)",
+    img: "https://m.media-amazon.com/images/I/71AREON.jpg",
+    type: "access",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXAREON/?tag=darnodra-21"
+  },
+  {
+    name: "موزع عطر و مرطب هواء صغير USB للسيارة و المكتب",
+    price: "61 درهم | 3.8 ⭐ (15,520)",
+    img: "https://m.media-amazon.com/images/I/71DIFFUSER.jpg",
+    type: "access",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXDIFF/?tag=darnodra-21"
+  },
+  {
+    name: "Kindle 16GB جديد 2024 - أنحف و أخف",
+    price: "599 درهم | 5.0 ⭐",
+    img: "https://m.media-amazon.com/images/I/71KINDLE.jpg",
+    type: "tech",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXKINDLE/?tag=darnodra-21"
+  },
+  {
+    name: "Pilot Frixion أقلام قابلة للمحو - أزرق 0.7 ملم (6 أقلام)",
+    price: "34 درهم | 4.5 ⭐ (393)",
+    img: "https://m.media-amazon.com/images/I/71PILOT.jpg",
+    type: "access",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B0XXXXPILOT/?tag=darnodra-21"
+  },
+  {
+    name: "ساعة Casio Vintage A158WA - فضية #1",
+    price: "75 درهم | 4.3 ⭐ (90,814)",
+    img: "https://m.media-amazon.com/images/I/51v6yOfG4OL._AC_SY695_.jpg",
+    type: "access",
+    source: "amazon",
+    link: "https://www.amazon.ae/-/ar/dp/B000GAYQJ0/?tag=darnodra-21"
   }
-  // زيد هنا منتجات أخرى... غير دير فاصلة و زيد {name:...}
 ];
-{
-  name: "ساعة Casio كلاسيكية رجالية - LTP-V007",
-  price: "63.15 درهم | $17",
-  img: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600",
-  type: "access",
-  source: "amazon",
-  link: "https://www.amazon.ae/s?k=Casio+LTP-V007+Women&tag=darnodra-21",
-  rating: "4.0 ⭐ (42 تقييم)"
-},
-{
-  name: "ساعة فاخرة زرقاء POEDAGAR - للرجال",
-  price: "102 درهم | Prime",
-  img: "https://images.unsplash.com/photo-1524805444973-bf35d1a0dba5?w=600",
-  type: "access",
-  source: "amazon",
-  link: "https://www.amazon.ae/dp/B0XXXX?tag=darnodra-21",
-  rating: "5.0 ⭐ (19 تقييم) - الأكثر مبيعا"
-},
-{
-  name: "ساعة Casio Vintage الرقمية A158WA - للجنسين",
-  price: "75 درهم | خصم 46%",
-  img: "https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=600",
-  type: "access",
-  source: "amazon",
-  link: "https://www.amazon.ae/dp/B000GAYQKY?tag=darnodra-21",
-  rating: "4.2 ⭐ (34,547 تقييم) - الأكثر طلبا!"
-}
