@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>دار نضرة | DAR NODRA MAZE</title>
-<style>
-body{margin:0;background:#0a0a0a;color:#fff;font-family:Cairo,sans-serif}
-.header{background:#111;padding:15px;text-align:center;border-bottom:2px solid #D4AF37}
-.header h1{color:#D4AF37;margin:0;font-size:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:15px;padding:15px}
-.card{background:#1a1a1a;border:1px solid #333;border-radius:12px;overflow:hidden;text-align:center;padding:10px}
-.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
-.card h3{font-size:14px;margin:8px 0;color:#fff;height:36px;overflow:hidden}
-.card .price{color:#D4AF37;font-weight:bold;font-size:13px}
-.btn{display:block;background:linear-gradient(45deg,#D4AF37,#b8962f);color:#000;padding:8px;margin-top:8px;border-radius:6px;text-decoration:none;font-weight:bold;font-size:13px}
-#lock{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#D4AF37;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:999999}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأنتيك والملوك | ساعات، ديكور، وتحف نادرة</title>
+    <!-- تضمين Tailwind CSS للتصميم المتجاوب -->
+    <script src="https://tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<div id="lock">
-<h1>دار نضرة</h1>
-<p>المتجر مغلق للصيانة</p>
-<input id="pass" type="password" placeholder="كود الدخول" style="padding:12px;border-radius:8px;border:1px solid gold;text-align:center;margin-top:20px">
-<button onclick="if(document.getElementById('pass').value==='nodra123'){document.getElementById('lock').style.display='none'}" style="margin-top:10px;padding:10px 20px;background:gold;color:#000;border:none;border-radius:8px;font-weight:bold">دخول</button>
-</div>
+<body class="bg-amber-50/30 text-gray-800 font-sans">
 
-<div class="header"><h1>دار نضرة - DAR NODRA MAZE</h1><small>0623894810 - منتجات فاخرة</small></div>
-<div id="products" class="grid"></div>
+    <!-- شريط التنقل -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-amber-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-amber-800">🕰️ متجر العراقة</a>
+            
+            <!-- أزرار التصنيفات -->
+            <div class="hidden md:flex gap-6 font-medium text-gray-600">
+                <button onclick="filterCategory('all')" class="hover:text-amber-800 transition">الكل</button>
+                <button onclick="filterCategory('watches')" class="hover:text-amber-800 transition">ساعات يدوية</button>
+                <button onclick="filterCategory('decor')" class="hover:text-amber-800 transition">ديكور راقٍ</button>
+                <button onclick="filterCategory('antiques')" class="hover:text-amber-800 transition">أشياء قديمة ونادرة</button>
+            </div>
 
-<script>
-const products=[
-{name:"ساعة Casio Vintage A158WA - #1 الأكثر مبيعا",price:"75 درهم ⭐4.3",img:"https://m.media-amazon.com/images/I/51v6yOfG4OL._SL500_.jpg",link:"https://www.amazon.ae/dp/B000GAYQJ0/?tag=darnodra-21"},
-{name:"عطر العربية للعود - فخم 90مل",price:"310 درهم ⭐5.0",img:"https://images.unsplash.com/photo-1594035910387-fea47794261f?w=400",link:"https://www.amazon.ae/s?k=oud+perfume&tag=darnodra-21"},
-{name:"ساعة LBOYLOVE نسائية - أزرق و ذهبي",price:"105 درهم",img:"https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=400",link:"https://www.amazon.ae/s?k=women+watch&tag=darnodra-21"},
-{name:"معطر Areon فانيليا - 50 مل",price:"29 درهم ⭐4.1",img:"https://images.unsplash.com/photo-1543422654-ac1c6ca993ed?w=400",link:"https://www.amazon.ae/s?k=areon&tag=darnodra-21"}
-];
-document.getElementById('products').innerHTML=products.map(p=>`
-<div class="card">
-<img src="${p.img}">
-<h3>${p.name}</h3>
-<div class="price">${p.price}</div>
-<a class="btn" href="${p.link}" target="_blank">شاهد على أمازون</a>
-</div>`).join('');
-</script>
+            <button onclick="toggleCart()" class="bg-amber-800 text-white px-4 py-2 rounded-lg hover:bg-amber-900 transition flex items-center gap-2">
+                <span>السلة</span>
+                <span id="cart-count" class="bg-white text-amber-800 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- واجهة المتجر (Hero) -->
+    <header class="bg-gradient-to-r from-amber-900 to-amber-950 text-white py-20 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-amber-100">اكتشف عراقة الماضي وفخامة الحاضر</h1>
+        <p class="text-lg text-amber-200/80 max-w-2xl mx-auto">مجموعتنا المختارة من الساعات الكلاسيكية، قطع الديكور الفريدة، والتحف القديمة التي تروي قصة تاريخية.</p>
+    </header>
+
+    <!-- قسم المنتجات -->
+    <main class="container mx-auto px-6 py-12">
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <!-- المنتجات تتولد هنا تلقائياً عبر JavaScript -->
+        </div>
+    </main>
+
+    <!-- السلة الجانبية -->
+    <div id="cart-drawer" class="fixed inset-y-0 left-0 w-80 bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 p-6 flex flex-col justify-between hidden">
+        <div>
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h3 class="text-xl font-bold text-amber-900">سلة المشتريات</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600 text-3xl">&times;</button>
+            </div>
+            <div id="cart-items" class="space-y-4 max-h-[60vh] overflow-y-auto"></div>
+        </div>
+        <div class="border-t pt-4">
+            <div class="flex justify-between font-bold text-lg mb-4 text-gray-900">
+                <span>المجموع:</span>
+                <span id="cart-total">0 درهم</span>
+            </div>
+            <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition flex justify-center items-center gap-2 mb-2">
+                💬 اطلب عبر الواتساب
+            </button>
+        </div>
+    </div>
+
+    <footer class="bg-stone-900 text-stone-400 py-8 text-center border-t border-stone-800">
+        <p>© 2026 متجر العراقة والأنتيك. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- ربط الملفات البرمجية الخارجيّة -->
+    <script src="integrations.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
